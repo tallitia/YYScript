@@ -1,2 +1,0 @@
-# YYScript
-YY的Script
