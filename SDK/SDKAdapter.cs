@@ -107,7 +107,7 @@ public class SDKAdapter : MonoBehaviour
     /// Native tools...
     public void CopyText(string text) 
     {
-        //mPlugins.Call("copyText", text);
+        mPlugins.Call("copyText", text);
     }
 
     public byte[] LoadAsset(string path)
@@ -133,7 +133,7 @@ public class SDKAdapter : MonoBehaviour
 #elif UNITY_ANDROID
         CallActivity("copyTextToClipboard", text);
 #elif UNITY_IOS
-       //_copyToClipboard(text);
+        _copyToClipboard(text);
 #else
         TextEditor te = new TextEditor();
 		te.text = text;
