@@ -48,7 +48,7 @@ public class AudioManager : Manager
     {
         if (Input.GetMouseButtonDown(0))
         {
-            PlaySound(CLICK_SOUND);
+            //PlaySound(CLICK_SOUND);
         }
     }
 
@@ -109,6 +109,7 @@ public class AudioManager : Manager
 
     IEnumerator Play(AudioSource player, AudioClip clip, Action onComplete)
     {
+        
         if (clip)
         {
             player.clip = clip;
@@ -124,12 +125,14 @@ public class AudioManager : Manager
     /// 播放背景音乐
     public void PlayMusic(string path)
     {
+        return;
         PlayMusicSet(path);
     }
 
     /// 播放一组音乐
     public void PlayMusicSet(string set)
     {
+        return;
         backup = music;
         music = set;
 
@@ -182,6 +185,7 @@ public class AudioManager : Manager
     /// 播放上一次音乐
     public void BackMusic()
     {
+        return;
         if (backup != null) 
             PlayMusicSet(backup);
     }
@@ -203,6 +207,7 @@ public class AudioManager : Manager
     /// 播放循环音效
     public void PlayLoopSound(string key, string path)
     {
+        return;
         AudioSource player;
         if (!loops.TryGetValue(key, out player))
         {

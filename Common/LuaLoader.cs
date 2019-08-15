@@ -34,6 +34,9 @@ public class LuaLoader : LuaFileUtils
             ab = mAsset.LoadAssetBundle(lines[i]);
             if (ab != null) AddSearchBundle(lines[i], ab);
         }
+        //Load Database Lua
+        
+   
     }
 
     public override byte[] ReadFile(string fileName)
@@ -44,17 +47,8 @@ public class LuaLoader : LuaFileUtils
             if (fileName.StartsWith("database"))
             {
                 fileName = path.Replace("/", "_") + EXT;
-                return File.ReadAllBytes(AppConst.CachePath + fileName.ToLower());
-                // string p = Path.GetFileNameWithoutExtension(fileName) + ".lua";
-                // return File.ReadAllBytes(Application.streamingAssetsPath + "/client/" + p);
+                return File.ReadAllBytes(AppConst.AssetsPath + fileName.ToLower());
             }
-
-            //if (fileName.StartsWith("languages"))
-            //{
-            //    string p = Path.GetFileNameWithoutExtension(fileName) + ".lua";
-            //    return File.ReadAllBytes(Application.streamingAssetsPath + "/en/" + p);
-            //}
-
             string abname = mAsset.GetAssetBundleName(path);
             AssetBundle ab = null;
             if (!zipMap.TryGetValue(abname.ToLower(), out ab))
@@ -64,7 +58,6 @@ public class LuaLoader : LuaFileUtils
 			fileName += EXT;
             TextAsset asset = ab.LoadAsset<TextAsset>(fileName);
 
-            // Util.Log(abname + " :" + fileName);
             byte[] bytes = asset.bytes;
 			Resources.UnloadAsset(asset);
             return bytes;
@@ -77,4 +70,5 @@ public class LuaLoader : LuaFileUtils
             return null;
         }
     }
+
 }

@@ -80,6 +80,7 @@ public class SettingLine : LineBase
         switch (Application.platform)
         {
             case RuntimePlatform.WindowsPlayer:
+            case RuntimePlatform.OSXPlayer:
                 AppConst.isWin = true;
                 AppConst.isAndroid = false;
                 AppConst.isEditor = true;
@@ -100,6 +101,7 @@ public class SettingLine : LineBase
                 AppConst.isIOS = true;
                 AppConst.isMobile = true;
                 break;
+            case RuntimePlatform.OSXEditor:
             case RuntimePlatform.WindowsEditor:
                 AppConst.isWin = true;
                 AppConst.isAndroid = false;

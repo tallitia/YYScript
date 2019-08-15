@@ -14,7 +14,7 @@ public class AppConst
 #endif
 
 #if UNITY_EDITOR
-    public const bool BundleMode = false;                                //AssetBundle模式
+    public const bool BundleMode = true;                                //AssetBundle模式
 #else
     public const bool BundleMode = true;                                 //AssetBundle模式
 #endif
@@ -65,7 +65,9 @@ public class AppConst
     /// stream缓存的AB路径
     public static string AssetsPath
     {
-        get { return Application.streamingAssetsPath + "/ab/"; }
+        get {
+            return Application.streamingAssetsPath + "/ab/";
+        }
     }
 
     /// 本地配置路径
