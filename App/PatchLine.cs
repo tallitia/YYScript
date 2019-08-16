@@ -23,7 +23,7 @@ public class PatchLine : LineBase
         if (AppConst.isWin)
             ret = false;
 
-        return ret;
+        return false;
     }
 
     public override void OnEnter()

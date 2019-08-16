@@ -18,7 +18,7 @@ public class UnzipLine : LineBase
         if (AppConst.isWin)
             ret = false;
 
-        return ret;
+        return false;
     }
 
     public void UnzipLineStart()

@@ -46,8 +46,8 @@ public class LuaLoader : LuaFileUtils
             string path = mPrefix + "/" + fileName;
             if (fileName.StartsWith("database"))
             {
-                fileName = path.Replace("/", "_") + EXT;
-                return File.ReadAllBytes(AppConst.AssetsPath + fileName.ToLower());
+                //fileName = path.Replace("/", "_") + EXT;
+                //return File.ReadAllBytes(AppConst.AssetsPath + fileName.ToLower());
             }
             string abname = mAsset.GetAssetBundleName(path);
             AssetBundle ab = null;
